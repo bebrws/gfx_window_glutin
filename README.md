@@ -1,3 +1,15 @@
+# What is different with this repo?
+
+Updated code and dependencies so that you can use the latest at the time:
+```toml
+glutin = "0.25.0"
+winit = "0.23.0"
+gfx_core = "0.9.1"
+gfx_device_gl = "0.16.2"
+```
+
+# Original repo:
+
 # gfx_window_glutin
 
 Glutin window backend for gfx-rs
@@ -7,10 +19,10 @@ Glutin window backend for gfx-rs
 Make sure you have the following in your `Cargo.toml`:
 
 ```toml
-gfx_core = "0.9"
-gfx_device_gl = "0.16"
-gfx_window_glutin = "0.30.0"
-glutin = "0.20"
+glutin = "0.25.0"
+winit = "0.23.0"
+gfx_core = "0.9.1"
+gfx_device_gl = "0.16.2"
 ```
 
 Then, initialize `gfx` as follows:
