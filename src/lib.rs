@@ -134,8 +134,8 @@ where
 fn get_window_dimensions(ctx: &glutin::WindowedContext<PossiblyCurrent>) -> texture::Dimensions {
     let window = ctx.window();
     let (width, height) = {
-        let size: winit::dpi::LogicalSize<f64> = window.inner_size().to_logical(window.scale_factor());
-        (size.width as _, size.height as _)
+        let is = window.inner_size();
+        (is.width as u16, is.height as u16)
     };
     let aa = ctx.get_pixel_format().multisampling.unwrap_or(0) as texture::NumSamples;
 
