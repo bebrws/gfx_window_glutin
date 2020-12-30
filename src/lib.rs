@@ -131,16 +131,36 @@ where
     )
 }
 
+// fn get_window_dimensions(ctx: &glutin::WindowedContext<PossiblyCurrent>) -> texture::Dimensions {
+//     let window = ctx.window();
+//     let (width, height) = {
+//         let size: winit::dpi::LogicalSize<f64> = window.inner_size().to_logical(window.scale_factor());
+//         (size.width as _, size.height as _)
+//     };
+//     let aa = ctx.get_pixel_format().multisampling.unwrap_or(0) as texture::NumSamples;
+//     println!("Width: {:}", width);
+//     println!("Height: {:}", height);
+
+//     let is = window.inner_size();
+
+//     println!("phys Width: {:}", is.width);
+//     println!("phys Height: {:}", is.height);
+
+//     (width, height, 1, aa.into())
+// }
+
 fn get_window_dimensions(ctx: &glutin::WindowedContext<PossiblyCurrent>) -> texture::Dimensions {
     let window = ctx.window();
     let (width, height) = {
         let is = window.inner_size();
+        // let sf = window.scale_factor() as u32;
         (is.width as u16, is.height as u16)
     };
     let aa = ctx.get_pixel_format().multisampling.unwrap_or(0) as texture::NumSamples;
 
     (width, height, 1, aa.into())
 }
+
 
 /// Initialize with a window builder. Raw version.
 pub fn init_raw<T>(
